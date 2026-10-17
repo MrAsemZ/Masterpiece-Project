@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasin - Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- SIDEBAR START: identical on every app page; only the "active" class moves. -->
+  <aside class="sidebar">
+    <div>
+      <a href="dashboard.html" class="sidebar-logo"><span class="logo-mark">R</span>Rasin</a>
+      <nav class="nav">
+        <a href="dashboard.html" class="active"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+        <a href="import.html"><span class="material-symbols-outlined">cloud_upload</span>Import</a>
+        <a href="review-queue.html"><span class="material-symbols-outlined">fact_check</span>Review Queue<span class="count">12</span></a>
+        <a href="transactions.html"><span class="material-symbols-outlined">receipt_long</span>Transactions</a>
+        <a href="tax-estimate.html"><span class="material-symbols-outlined">account_balance</span>Tax Estimate</a>
+        <a href="chart-of-accounts.html"><span class="material-symbols-outlined">account_tree</span>Chart of Accounts</a>
+        <a href="ai-assistant.html"><span class="material-symbols-outlined">smart_toy</span>AI Assistant</a>
+      </nav>
+    </div>
+    <div>
+      <p class="sidebar-note">AI suggests. You approve.</p>
+      <a href="profile.html" class="user-link">
+        <span class="avatar">MC</span>
+        <div><strong>Maya Chen</strong><span>Freelancer</span></div>
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <main class="app-main">
+    <div class="content">
+
+      <header class="page-header">
+        <h1>Good morning, Maya</h1>
+        <p>Year to date, approved transactions only (Jan 1 - Oct 14, 2026)</p>
+      </header>
+
+      <section class="stats">
+        <div class="card stat"><span>Revenue</span><strong>$82,400.00</strong></div>
+        <div class="card stat"><span>Expenses</span><strong>$22,400.00</strong></div>
+        <div class="card stat"><span>Net profit</span><strong>$60,000.00</strong></div>
+        <div class="card stat"><span>Tax set aside</span><strong>$12,989.07</strong></div>
+      </section>
+
+      <section class="banner">
+        <p><span class="material-symbols-outlined">notification_important</span>12 transactions need your review</p>
+        <a href="review-queue.html" class="btn">Review now</a>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="card">
+          <div class="card-head"><h2>Monthly net profit</h2><span>Jan - Oct 2026</span></div>
+          <!-- --h = bar height as a number out of 100 (tallest month = 100) -->
+          <div class="chart">
+            <div class="bar"><span class="num">$4,200</span><div class="bar-fill" style="--h:57"></div><span>Jan</span></div>
+            <div class="bar"><span class="num">$5,100</span><div class="bar-fill" style="--h:69"></div><span>Feb</span></div>
+            <div class="bar"><span class="num">$6,300</span><div class="bar-fill" style="--h:85"></div><span>Mar</span></div>
+            <div class="bar"><span class="num">$5,800</span><div class="bar-fill" style="--h:78"></div><span>Apr</span></div>
+            <div class="bar"><span class="num">$6,900</span><div class="bar-fill" style="--h:93"></div><span>May</span></div>
+            <div class="bar"><span class="num">$7,200</span><div class="bar-fill" style="--h:97"></div><span>Jun</span></div>
+            <div class="bar"><span class="num">$6,100</span><div class="bar-fill" style="--h:82"></div><span>Jul</span></div>
+            <div class="bar"><span class="num">$7,400</span><div class="bar-fill" style="--h:100"></div><span>Aug</span></div>
+            <div class="bar"><span class="num">$6,500</span><div class="bar-fill" style="--h:88"></div><span>Sep</span></div>
+            <div class="bar"><span class="num">$4,500</span><div class="bar-fill" style="--h:61"></div><span>Oct</span></div>
+          </div>
+        </div>
+
+        <div class="card side-card">
+          <span class="label">Next tax payment</span>
+          <p class="value num">$3,989.07</p>
+          <p class="muted">due Jan 15, 2027</p>
+          <a href="tax-estimate.html" class="link">See estimate <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>

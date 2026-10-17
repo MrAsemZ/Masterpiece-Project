@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasin - Chart of Accounts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- SIDEBAR START: identical on every app page; only the "active" class moves. -->
+  <aside class="sidebar">
+    <div>
+      <a href="dashboard.html" class="sidebar-logo"><span class="logo-mark">R</span>Rasin</a>
+      <nav class="nav">
+        <a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+        <a href="import.html"><span class="material-symbols-outlined">cloud_upload</span>Import</a>
+        <a href="review-queue.html"><span class="material-symbols-outlined">fact_check</span>Review Queue<span class="count">12</span></a>
+        <a href="transactions.html"><span class="material-symbols-outlined">receipt_long</span>Transactions</a>
+        <a href="tax-estimate.html"><span class="material-symbols-outlined">account_balance</span>Tax Estimate</a>
+        <a href="chart-of-accounts.html" class="active"><span class="material-symbols-outlined">account_tree</span>Chart of Accounts</a>
+        <a href="ai-assistant.html"><span class="material-symbols-outlined">smart_toy</span>AI Assistant</a>
+      </nav>
+    </div>
+    <div>
+      <p class="sidebar-note">AI suggests. You approve.</p>
+      <a href="profile.html" class="user-link">
+        <span class="avatar">MC</span>
+        <div><strong>Maya Chen</strong><span>Freelancer</span></div>
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <main class="app-main">
+    <div class="content">
+      <header class="page-header split">
+        <div><h1>Chart of Accounts</h1><p>Accounts are created automatically from your categories.</p></div>
+        <a href="#add-account" class="btn"><span class="material-symbols-outlined">add</span>Add account</a>
+      </header>
+
+      <section class="stats">
+        <div class="card stat"><span>Accounts</span><strong>11</strong></div>
+        <div class="card stat"><span>Business Checking</span><strong>$18,240.55</strong></div>
+        <div class="card stat"><span>Revenue, year to date</span><strong>$82,400.00</strong></div>
+        <div class="card stat"><span>Expenses, year to date</span><strong>$22,960.00</strong></div>
+      </section>
+
+      <details class="card group" open>
+        <summary><span class="material-symbols-outlined">expand_more</span>Assets<span class="tag">Asset · 1 account</span><span class="total num">$18,240.55</span></summary>
+        <table class="table"><tbody>
+            <tr><td class="code">1000</td><td><strong>Business Checking</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$18,240.55</td></tr>
+        </tbody></table>
+      </details>
+
+      <details class="card group" open>
+        <summary><span class="material-symbols-outlined">expand_more</span>Revenue<span class="tag">Revenue · 1 account</span><span class="total num">$82,400.00</span></summary>
+        <table class="table"><tbody>
+            <tr><td class="code">4000</td><td><strong>Service income</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$82,400.00</td></tr>
+        </tbody></table>
+      </details>
+
+      <details class="card group" open>
+        <summary><span class="material-symbols-outlined">expand_more</span>Expenses<span class="tag">Expense · 8 accounts</span><span class="total num">$22,960.00</span></summary>
+        <table class="table"><tbody>
+            <tr><td class="code">5000</td><td><strong>Software &amp; subscriptions</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$3,240.00</td></tr>
+            <tr><td class="code">5100</td><td><strong>Advertising</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$2,100.00</td></tr>
+            <tr><td class="code">5200</td><td><strong>Contract labor</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$8,500.00</td></tr>
+            <tr><td class="code">5300</td><td><strong>Office expense</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$1,460.00</td></tr>
+            <tr><td class="code">5400</td><td><strong>Rent / lease</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$4,400.00</td></tr>
+            <tr><td class="code">5500</td><td><strong>Travel</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$1,940.00</td></tr>
+            <tr><td class="code">5600</td><td><strong>Meals</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span> <span class="badge badge-ai">50% deductible</span></td><td class="right num">$1,120.00</td></tr>
+            <tr><td class="code">5700</td><td><strong>Bank &amp; processing fees</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$200.00</td></tr>
+        </tbody></table>
+      </details>
+
+      <details class="card group" open>
+        <summary><span class="material-symbols-outlined">expand_more</span>Equity<span class="tag">Equity · 1 account</span><span class="total num">$31,000.00</span></summary>
+        <table class="table"><tbody>
+            <tr><td class="code">3000</td><td><strong>Owner's draw</strong> <span class="badge badge-lock"><span class="material-symbols-outlined">lock</span>System</span></td><td class="right num">$31,000.00</td></tr>
+        </tbody></table>
+      </details>
+
+      <p class="muted disclaimer">Every transaction you approve posts to these accounts. System accounts can't be deleted. Meals count at 50% for tax, so your deductible expenses are $22,400.00.</p>
+
+      <!-- Add-account dialog (CSS :target, no JavaScript). Saves one accounts row. -->
+      <div class="modal" id="add-account">
+        <form class="card modal-card form" action="chart-of-accounts.html">
+          <div class="modal-head"><h2>Add account</h2><a href="#" class="icon-btn" title="Close"><span class="material-symbols-outlined">close</span></a></div>
+          <div class="field"><label for="code">Code</label><input type="text" id="code" name="code" placeholder="1100" maxlength="10" required></div>
+          <div class="field"><label for="acc_name">Name</label><input type="text" id="acc_name" name="name" placeholder="Business Credit Card" required></div>
+          <div class="field"><label for="type">Type</label>
+            <select id="type" name="type"><option value="asset">Asset (bank account)</option><option value="liability">Liability (credit card)</option></select>
+            <p class="hint">Use this for another bank account or card, so you can import its CSV.</p>
+          </div>
+          <div class="modal-actions"><a href="#" class="btn btn-light">Cancel</a><button type="submit" class="btn">Add account</button></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

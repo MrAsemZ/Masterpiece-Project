@@ -1,0 +1,39 @@
+/* base.css: design tokens, reset, typography. Loaded on every page. */
+:root {
+  --bg: #FBF9F5;
+  --card: #FFFFFF;
+  --border: #E4E2DE;
+  --primary: #023629;
+  --primary-hover: #034534;
+  --container: #1F4D3F;
+  --accent: #FEBB2A;
+  --accent-text: #7C5800;
+  --accent-tint: #FEF6E4;
+  --green-tint: #E7F2EC;
+  --text: #1E1E1E;
+  --muted: #6B6B6B;
+  --error: #C62828;
+  --radius: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: 400 14px/20px Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: 28px; line-height: 36px; font-weight: 600; letter-spacing: -0.02em; }
+h2 { font-size: 16px; line-height: 24px; font-weight: 600; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+
+.muted { color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+.material-symbols-outlined { font-size: 20px; line-height: 1; vertical-align: middle; }
+
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }

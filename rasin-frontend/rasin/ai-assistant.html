@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasin - AI Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- SIDEBAR START: identical on every app page; only the "active" class moves. -->
+  <aside class="sidebar">
+    <div>
+      <a href="dashboard.html" class="sidebar-logo"><span class="logo-mark">R</span>Rasin</a>
+      <nav class="nav">
+        <a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+        <a href="import.html"><span class="material-symbols-outlined">cloud_upload</span>Import</a>
+        <a href="review-queue.html"><span class="material-symbols-outlined">fact_check</span>Review Queue<span class="count">12</span></a>
+        <a href="transactions.html"><span class="material-symbols-outlined">receipt_long</span>Transactions</a>
+        <a href="tax-estimate.html"><span class="material-symbols-outlined">account_balance</span>Tax Estimate</a>
+        <a href="chart-of-accounts.html"><span class="material-symbols-outlined">account_tree</span>Chart of Accounts</a>
+        <a href="ai-assistant.html" class="active"><span class="material-symbols-outlined">smart_toy</span>AI Assistant</a>
+      </nav>
+    </div>
+    <div>
+      <p class="sidebar-note">AI suggests. You approve.</p>
+      <a href="profile.html" class="user-link">
+        <span class="avatar">MC</span>
+        <div><strong>Maya Chen</strong><span>Freelancer</span></div>
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <main class="app-main">
+    <div class="content">
+      <header class="page-header">
+        <h1>AI Assistant</h1>
+        <p>Ask about your income, expenses, or taxes.</p>
+      </header>
+
+      <div class="chat">
+        <div class="notice"><span class="material-symbols-outlined">verified_user</span>Read-only. I explain your numbers; I never change them.</div>
+
+        <!-- Laravel: POST /api/assistant/messages. Each chip sends its text as the question. -->
+        <div class="chips">
+          <button type="submit" form="chat-form" name="question" value="How much did I spend on software this year?" class="chip"><span class="material-symbols-outlined">search</span>How much did I spend on software?</button>
+          <button type="submit" form="chat-form" name="question" value="What is my tax estimate?" class="chip"><span class="material-symbols-outlined">account_balance</span>What is my tax estimate?</button>
+          <button type="submit" form="chat-form" name="question" value="Which category is my biggest expense?" class="chip"><span class="material-symbols-outlined">pie_chart</span>Which category is my biggest expense?</button>
+        </div>
+
+        <div class="msg-user">How much did I spend on software this year?</div>
+        <div class="msg-ai">
+          <span class="mi material-symbols-outlined">smart_toy</span>
+          <div class="answer">
+            <p><strong class="num">$3,240.00</strong> on <strong>Software &amp; subscriptions</strong>.</p>
+            <p class="source"><span class="material-symbols-outlined">fact_check</span>Based on 31 approved transactions, Jan 1 - Oct 14, 2026.</p>
+          </div>
+        </div>
+
+        <div class="msg-user">What is my tax estimate?</div>
+        <div class="msg-ai">
+          <span class="mi material-symbols-outlined">smart_toy</span>
+          <div class="answer">
+            <p><strong class="num">$12,989.07</strong> so far this year, with <strong class="num">$3,989.07</strong> still to pay by Jan 15, 2027.</p>
+            <p class="source"><span class="material-symbols-outlined">fact_check</span>Based on 412 approved transactions. 12 pending transactions are not included.</p>
+          </div>
+        </div>
+
+        <form class="composer" id="chat-form" action="ai-assistant.html">
+          <input type="text" name="question" placeholder="Ask a question about your income, expenses, or taxes..." autocomplete="off" required>
+          <button type="submit" class="btn"><span class="material-symbols-outlined">arrow_upward</span>Send</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

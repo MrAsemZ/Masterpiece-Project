@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasin - Import</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- SIDEBAR START: identical on every app page; only the "active" class moves. -->
+  <aside class="sidebar">
+    <div>
+      <a href="dashboard.html" class="sidebar-logo"><span class="logo-mark">R</span>Rasin</a>
+      <nav class="nav">
+        <a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+        <a href="import.html" class="active"><span class="material-symbols-outlined">cloud_upload</span>Import</a>
+        <a href="review-queue.html"><span class="material-symbols-outlined">fact_check</span>Review Queue<span class="count">12</span></a>
+        <a href="transactions.html"><span class="material-symbols-outlined">receipt_long</span>Transactions</a>
+        <a href="tax-estimate.html"><span class="material-symbols-outlined">account_balance</span>Tax Estimate</a>
+        <a href="chart-of-accounts.html"><span class="material-symbols-outlined">account_tree</span>Chart of Accounts</a>
+        <a href="ai-assistant.html"><span class="material-symbols-outlined">smart_toy</span>AI Assistant</a>
+      </nav>
+    </div>
+    <div>
+      <p class="sidebar-note">AI suggests. You approve.</p>
+      <a href="profile.html" class="user-link">
+        <span class="avatar">MC</span>
+        <div><strong>Maya Chen</strong><span>Freelancer</span></div>
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <main class="app-main">
+    <div class="content">
+      <header class="page-header">
+        <h1>Import transactions</h1>
+        <p>Pick the bank account, then upload a CSV from your bank.</p>
+      </header>
+
+      <div class="narrow">
+        <!-- Static demo: goes to the processing page. In Laravel: action="/imports" method="post" enctype="multipart/form-data" -->
+        <form class="card form" action="import-processing.html">
+          <div class="field">
+            <label for="bank_account_id">Bank account</label>
+            <select id="bank_account_id" name="bank_account_id">
+              <option value="1">Business Checking (1000)</option>
+            </select>
+            <p class="hint">Imported rows are linked to this account. Add more in <a href="chart-of-accounts.html">Chart of Accounts</a>.</p>
+          </div>
+
+          <div class="field">
+            <label for="file">Statement file</label>
+            <div class="dropzone">
+              <input type="file" id="file" name="file" accept=".csv" required>
+              <span class="material-symbols-outlined">upload_file</span>
+              <p><strong>Drop your bank CSV here or browse</strong></p>
+              <p class="muted">Columns needed: date, description, amount. CSV up to 25 MB.</p>
+            </div>
+          </div>
+
+          <div class="notice"><span class="material-symbols-outlined">verified_user</span>Nothing is saved to your books until you approve it.</div>
+          <button type="submit" class="btn"><span class="material-symbols-outlined">auto_read_play</span>Upload and categorize</button>
+        </form>
+
+        <div class="card sample">
+          <h2>CSV template</h2>
+          <p class="muted">Use these header names. A balance column is optional and ignored.</p>
+          <table class="table">
+            <thead><tr><th>date</th><th>description</th><th class="right">amount</th></tr></thead>
+            <tbody>
+              <tr><td>2026-10-12</td><td>Adobe Creative Cloud</td><td class="right num">-54.99</td></tr>
+              <tr><td>2026-10-11</td><td>Stripe payout</td><td class="right num">2400.00</td></tr>
+              <tr><td>2026-10-08</td><td>Starbucks</td><td class="right num">-18.65</td></tr>
+            </tbody>
+          </table>
+          <a class="link" href="assets/rasin-template.csv" download><span class="material-symbols-outlined">download</span>Download the CSV template</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

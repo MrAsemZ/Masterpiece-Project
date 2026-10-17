@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="8;url=import-done.html">
+  <title>Rasin - Import</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- SIDEBAR START: identical on every app page; only the "active" class moves. -->
+  <aside class="sidebar">
+    <div>
+      <a href="dashboard.html" class="sidebar-logo"><span class="logo-mark">R</span>Rasin</a>
+      <nav class="nav">
+        <a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+        <a href="import.html" class="active"><span class="material-symbols-outlined">cloud_upload</span>Import</a>
+        <a href="review-queue.html"><span class="material-symbols-outlined">fact_check</span>Review Queue<span class="count">12</span></a>
+        <a href="transactions.html"><span class="material-symbols-outlined">receipt_long</span>Transactions</a>
+        <a href="tax-estimate.html"><span class="material-symbols-outlined">account_balance</span>Tax Estimate</a>
+        <a href="chart-of-accounts.html"><span class="material-symbols-outlined">account_tree</span>Chart of Accounts</a>
+        <a href="ai-assistant.html"><span class="material-symbols-outlined">smart_toy</span>AI Assistant</a>
+      </nav>
+    </div>
+    <div>
+      <p class="sidebar-note">AI suggests. You approve.</p>
+      <a href="profile.html" class="user-link">
+        <span class="avatar">MC</span>
+        <div><strong>Maya Chen</strong><span>Freelancer</span></div>
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <main class="app-main">
+    <div class="content">
+      <header class="page-header">
+        <h1>Import transactions</h1>
+        <p>Your file is being read and categorized.</p>
+      </header>
+
+      <!-- Demo only: the page moves to the done screen on its own after 8 seconds (see the meta refresh in the head).
+           In Laravel, poll import_batches.status instead. -->
+      <div class="narrow">
+        <div class="card status">
+          <div class="file-row">
+            <span class="material-symbols-outlined">description</span>
+            <div><strong>chase_business_checking_oct2026.csv</strong><span class="muted">146 transactions found</span></div>
+          </div>
+          <div>
+            <div class="status-line"><strong>Categorizing with AI...</strong><span class="num">90 of 146</span></div>
+            <div class="progress"><i style="--w:62%"></i></div>
+          </div>
+          <div class="notice"><span class="material-symbols-outlined">verified_user</span>Nothing is saved to your books until you approve it.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

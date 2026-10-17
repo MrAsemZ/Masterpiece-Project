@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasin Admin - Users</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ADMIN SIDEBAR START: same on both admin pages; only "active" moves. -->
+  <aside class="sidebar">
+    <div>
+      <a href="admin-overview.html" class="sidebar-logo">Rasin<span class="pill">ADMIN</span></a>
+      <nav class="nav"><a href="admin-overview.html"><span class="material-symbols-outlined">dashboard</span>Overview</a><a href="admin-users.html" class="active"><span class="material-symbols-outlined">group</span>Users</a></nav>
+    </div>
+    <div class="user-link"><span class="avatar">A</span><div><strong>Asem</strong><span>Founder</span></div></div>
+  </aside>
+  <!-- ADMIN SIDEBAR END -->
+
+  <main class="app-main">
+    <div class="content">
+      <header class="page-header split">
+        <div><h1>Users</h1><p>Founder console</p></div>
+        <div class="actions"><span class="badge badge-ok">212 freelancers</span><span class="badge badge-pending">14 on trial</span></div>
+      </header>
+
+      <div class="notice gap"><span class="material-symbols-outlined">lock</span><p><strong>Data isolation:</strong> admins can see account details and system telemetry, but never individual transactions or tax data.</p></div>
+
+      <form class="toolbar" action="admin-users.html">
+        <div class="search"><span class="material-symbols-outlined">search</span><input type="search" name="q" placeholder="Search by name, email, or business..."></div>
+      </form>
+
+      <nav class="tabs">
+        <a class="tab active" href="admin-users.html">All <em>212</em></a>
+        <a class="tab" href="admin-users.html?plan=paid">Paid <em>198</em></a>
+        <a class="tab" href="admin-users.html?plan=trial">Trial <em>14</em></a>
+        <a class="tab" href="admin-users.html?plan=cancelled">Cancelled <em>0</em></a>
+      </nav>
+
+      <div class="card table-card">
+        <table class="table">
+          <thead><tr><th>User</th><th>Business</th><th>Plan</th><th>Signed up</th><th>Transactions</th><th>Last active</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="name-cell"><span class="avatar">MC</span><div><strong>Maya Chen</strong><span class="sub">maya@chenstudio.co</span></div></div></td>
+              <td>Maya Chen Design LLC</td><td><span class="badge badge-ok">Paid</span></td><td class="muted">Sep 14, 2026</td><td class="num">1,428</td>
+              <td><span class="live"></span>4 min ago</td>
+              <td><div class="actions"><a href="#" class="btn btn-light btn-sm">View</a><a href="#" class="btn btn-light btn-sm danger">Suspend</a></div></td>
+            </tr>
+            <tr>
+              <td><div class="name-cell"><span class="avatar">DO</span><div><strong>Daniel Ortiz</strong><span class="sub">daniel@ortizmotion.com</span></div></div></td>
+              <td>Ortiz Motion LLC</td><td><span class="badge badge-ok">Paid</span></td><td class="muted">Sep 20, 2026</td><td class="num">642</td>
+              <td><span class="live"></span>18 min ago</td>
+              <td><div class="actions"><a href="#" class="btn btn-light btn-sm">View</a><a href="#" class="btn btn-light btn-sm danger">Suspend</a></div></td>
+            </tr>
+            <tr>
+              <td><div class="name-cell"><span class="avatar">PN</span><div><strong>Priya Nair</strong><span class="sub">priya@nairconsulting.io</span></div></div></td>
+              <td>Nair Consulting</td><td><span class="badge badge-ok">Paid</span></td><td class="muted">Sep 27, 2026</td><td class="num">318</td>
+              <td><span class="live"></span>2 hours ago</td>
+              <td><div class="actions"><a href="#" class="btn btn-light btn-sm">View</a><a href="#" class="btn btn-light btn-sm danger">Suspend</a></div></td>
+            </tr>
+            <tr>
+              <td><div class="name-cell"><span class="avatar">AR</span><div><strong>Alex Rivera</strong><span class="sub">alex@riverastudio.design</span></div></div></td>
+              <td>Rivera Studio LLC</td><td><span class="badge badge-pending">Trial · 4 days left</span></td><td class="muted">Oct 2, 2026</td><td class="num">94</td>
+              <td><span class="live"></span>35 min ago</td>
+              <td><div class="actions"><a href="#" class="btn btn-light btn-sm">View</a><a href="#" class="btn btn-light btn-sm danger">Suspend</a></div></td>
+            </tr>
+            <tr>
+              <td><div class="name-cell"><span class="avatar">ZW</span><div><strong>Zoe Washington</strong><span class="sub">zoe@washingtonbrand.co</span></div></div></td>
+              <td>Washington Brand Co</td><td><span class="badge badge-ok">Paid</span></td><td class="muted">Sep 12, 2026</td><td class="num">2,190</td>
+              <td><span class="idle"></span>1 day ago</td>
+              <td><div class="actions"><a href="#" class="btn btn-light btn-sm">View</a><a href="#" class="btn btn-light btn-sm danger">Suspend</a></div></td>
+            </tr>
+            <tr>
+              <td><div class="name-cell"><span class="avatar">NP</span><div><strong>Nina Patel</strong><span class="sub">nina@patelcreative.com</span></div></div></td>
+              <td>Patel Creative</td><td><span class="badge badge-ok">Paid</span></td><td class="muted">Oct 3, 2026</td><td class="num">211</td>
+              <td><span class="live"></span>3 hours ago</td>
+              <td><div class="actions"><a href="#" class="btn btn-light btn-sm">View</a><a href="#" class="btn btn-light btn-sm danger">Suspend</a></div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pager">
+          <p class="muted">Showing 1-6 of 212 users</p>
+          <nav><span class="disabled">Prev</span><a class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><span class="disabled">...</span><a href="#">36</a><a href="#">Next</a></nav>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

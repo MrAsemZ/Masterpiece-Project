@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasin - Tax Estimate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- SIDEBAR START: identical on every app page; only the "active" class moves. -->
+  <aside class="sidebar">
+    <div>
+      <a href="dashboard.html" class="sidebar-logo"><span class="logo-mark">R</span>Rasin</a>
+      <nav class="nav">
+        <a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+        <a href="import.html"><span class="material-symbols-outlined">cloud_upload</span>Import</a>
+        <a href="review-queue.html"><span class="material-symbols-outlined">fact_check</span>Review Queue<span class="count">12</span></a>
+        <a href="transactions.html"><span class="material-symbols-outlined">receipt_long</span>Transactions</a>
+        <a href="tax-estimate.html" class="active"><span class="material-symbols-outlined">account_balance</span>Tax Estimate</a>
+        <a href="chart-of-accounts.html"><span class="material-symbols-outlined">account_tree</span>Chart of Accounts</a>
+        <a href="ai-assistant.html"><span class="material-symbols-outlined">smart_toy</span>AI Assistant</a>
+      </nav>
+    </div>
+    <div>
+      <p class="sidebar-note">AI suggests. You approve.</p>
+      <a href="profile.html" class="user-link">
+        <span class="avatar">MC</span>
+        <div><strong>Maya Chen</strong><span>Freelancer</span></div>
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <main class="app-main">
+    <div class="content">
+      <header class="page-header">
+        <h1>Tax Estimate 2026</h1>
+        <p>Federal only. Texas has no state income tax.</p>
+      </header>
+
+      <section class="card next-pay">
+        <div>
+          <span class="label">Suggested next payment</span>
+          <p class="value num">$3,989.07</p>
+          <p class="muted">due Jan 15, 2027</p>
+        </div>
+        <div class="next-actions">
+          <a href="#record-payment" class="btn">Record a payment</a>
+          <a href="https://www.irs.gov/payments" class="btn btn-light" target="_blank" rel="noopener noreferrer">Pay on IRS Direct Pay<span class="material-symbols-outlined">open_in_new</span></a>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="card">
+          <div class="card-head"><h2>How we calculated it</h2><span>Fixed formulas, no AI</span></div>
+          <div class="calc-row "><div>Net business profit<small>Revenue minus deductible expenses</small></div><span class="num">$60,000.00</span></div>
+          <div class="calc-row "><div>Self-employment tax<small>15.3% on 92.35% of net profit</small></div><span class="num">$8,477.73</span></div>
+          <div class="calc-row "><div>Half of self-employment tax<small>Deducted from income</small></div><span class="num">-$4,238.87</span></div>
+          <div class="calc-row "><div>Standard deduction<small>2026, single filer</small></div><span class="num">-$16,100.00</span></div>
+          <div class="calc-row sub-total"><div>Taxable income</div><span class="num">$39,661.13</span></div>
+          <div class="calc-row "><div>Federal income tax<small>Calculated across the 2026 brackets</small></div><span class="num">$4,511.34</span></div>
+          <div class="calc-row total"><div>Total tax for 2026<small>Income tax plus self-employment tax</small></div><span class="num">$12,989.07</span></div>
+          <div class="calc-row "><div>Estimated payments recorded<small>3 payments</small></div><span class="num">-$9,000.00</span></div>
+          <div class="calc-row final"><div>Still to pay<small>Remaining balance</small></div><span class="num">$3,989.07</span></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h2>Payments you recorded</h2><span>3 of 4 paid</span></div>
+          <div class="pay-row "><span class="mi material-symbols-outlined">check</span><div><strong>Q1 payment</strong><small>Apr 15, 2026</small></div><div class="right"><strong class="num">$3,000.00</strong><small>Paid</small></div></div>
+          <div class="pay-row "><span class="mi material-symbols-outlined">check</span><div><strong>Q2 payment</strong><small>Jun 15, 2026</small></div><div class="right"><strong class="num">$3,000.00</strong><small>Paid</small></div></div>
+          <div class="pay-row "><span class="mi material-symbols-outlined">check</span><div><strong>Q3 payment</strong><small>Sep 15, 2026</small></div><div class="right"><strong class="num">$3,000.00</strong><small>Paid</small></div></div>
+          <div class="pay-row pending"><span class="mi material-symbols-outlined">schedule</span><div><strong>Q4 payment</strong><small>Due Jan 15, 2027</small></div><div class="right"><strong class="num">$3,989.07</strong><small>Pending</small></div></div>
+          <a href="#record-payment" class="link"><span class="material-symbols-outlined">add</span>Record a payment</a>
+        </div>
+      </section>
+
+      <section class="banner">
+        <p><span class="material-symbols-outlined">info</span>This estimate may run slightly high because it does not include the QBI deduction.</p>
+      </section>
+
+      <p class="muted disclaimer">Estimate only. Not tax advice.</p>
+
+      <!-- Record-payment dialog: opens with the #record-payment link (CSS :target), no JavaScript.
+           Saves one tax_payments row: tax_year, paid_on, amount_cents. -->
+      <div class="modal" id="record-payment">
+        <form class="card modal-card form" action="tax-estimate.html">
+          <div class="modal-head"><h2>Record a payment</h2><a href="#" class="icon-btn" title="Close"><span class="material-symbols-outlined">close</span></a></div>
+          <input type="hidden" name="tax_year" value="2026">
+          <div class="field"><label for="amount">Amount ($)</label><input type="number" id="amount" name="amount" step="0.01" min="0.01" value="3989.07" required></div>
+          <div class="field"><label for="paid_on">Date paid</label><input type="date" id="paid_on" name="paid_on" value="2026-10-15" required></div>
+          <div class="modal-actions"><a href="#" class="btn btn-light">Cancel</a><button type="submit" class="btn">Save payment</button></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

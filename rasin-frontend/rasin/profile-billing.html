@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasin - Billing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- SIDEBAR START: identical on every app page; only the "active" class moves. -->
+  <aside class="sidebar">
+    <div>
+      <a href="dashboard.html" class="sidebar-logo"><span class="logo-mark">R</span>Rasin</a>
+      <nav class="nav">
+        <a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+        <a href="import.html"><span class="material-symbols-outlined">cloud_upload</span>Import</a>
+        <a href="review-queue.html"><span class="material-symbols-outlined">fact_check</span>Review Queue<span class="count">12</span></a>
+        <a href="transactions.html"><span class="material-symbols-outlined">receipt_long</span>Transactions</a>
+        <a href="tax-estimate.html"><span class="material-symbols-outlined">account_balance</span>Tax Estimate</a>
+        <a href="chart-of-accounts.html"><span class="material-symbols-outlined">account_tree</span>Chart of Accounts</a>
+        <a href="ai-assistant.html"><span class="material-symbols-outlined">smart_toy</span>AI Assistant</a>
+      </nav>
+    </div>
+    <div>
+      <p class="sidebar-note">AI suggests. You approve.</p>
+      <a href="profile.html" class="user-link">
+        <span class="avatar">MC</span>
+        <div><strong>Maya Chen</strong><span>Freelancer</span></div>
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <main class="app-main">
+    <div class="content">
+      <header class="page-header"><h1>Profile</h1><p>Your account, your business, and your tax profile.</p></header>
+      <nav class="tabs">
+        <a class="tab" href="profile.html">Settings</a>
+        <a class="tab active" href="profile-billing.html">Billing</a>
+      </nav>
+
+      <div class="narrow">
+        <!-- Laravel Cashier: subscribe, cancel and the card come from Stripe (billing portal). -->
+        <div class="card">
+          <div class="card-head"><h2>Current plan</h2><span class="badge badge-ok">Active</span></div>
+          <div class="plan">
+            <div><strong>Rasin plan</strong><p class="muted">AI categorization, tax estimate, chart of accounts, AI assistant</p></div>
+            <p class="plan-price num">$19.99<span> / month</span></p>
+          </div>
+          <div class="calc-row"><div>Next charge<small>Nov 3, 2026</small></div></div>
+          <div class="calc-row"><div>Visa ending 4242<small>Default payment method</small></div><a href="#" class="btn btn-light">Manage payment method</a></div>
+          <div class="calc-row"><div>Need to pause or end your subscription?</div><a href="#" class="btn btn-light danger">Cancel subscription</a></div>
+        </div>
+
+        <div class="card table-card">
+          <div class="card-head pad"><h2>Invoices</h2><span>Receipts for your records</span></div>
+          <table class="table">
+            <thead><tr><th>Date</th><th>Amount</th><th>Status</th><th>Receipt</th></tr></thead>
+            <tbody>
+            <tr><td>Oct 3, 2026</td><td class="num">$19.99</td><td><span class="badge badge-ok">Paid</span></td><td><a href="#" class="link flat"><span class="material-symbols-outlined">arrow_downward</span>Download</a></td></tr>
+            <tr><td>Sep 3, 2026</td><td class="num">$19.99</td><td><span class="badge badge-ok">Paid</span></td><td><a href="#" class="link flat"><span class="material-symbols-outlined">arrow_downward</span>Download</a></td></tr>
+            <tr><td>Aug 3, 2026</td><td class="num">$19.99</td><td><span class="badge badge-ok">Paid</span></td><td><a href="#" class="link flat"><span class="material-symbols-outlined">arrow_downward</span>Download</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
